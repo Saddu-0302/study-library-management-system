@@ -1,0 +1,334 @@
+Study Library Management System
+
+Modules
+│
+├── Authentication
+├── Dashboard
+├── Student Management
+├── Seat Management
+├── Booking
+├── Payments
+├── Bills
+├── Email
+├── SMS
+├── Reports
+└── Settings
+
+Create the UI Design
+-Login
+-Dashboard
+-Students
+-Seats
+-Payments
+-Reports
+-Settings
+
+
+Milestone 1 – Requirements Analysis (Current Step)
+ -Before writing any code, define exactly what the system should do.
+ -User Roles
+ -Initially, one role is enough:
+  -Admin
+ -Later, you can add:
+  -Staff
+
+Functional Requirements
+Authentication
+Admin Login
+Logout
+JWT Authentication
+Dashboard
+
+Display:
+
+Total Seats
+Available Seats
+Booked Seats
+Expired Seats
+Today's Admissions
+Monthly Revenue
+Student Management
+
+Admin can:
+
+Add Student
+Edit Student
+Delete Student
+Search Student
+View Student Details
+
+Each student stores:
+
+Name
+Mobile
+Email
+Address
+Photo
+ID Proof (optional)
+Seat Management
+Total 300 seats
+Every seat has a unique number
+Seat status:
+Available
+Booked
+Expired
+Reserved (future)
+Booking
+
+Admin books a seat:
+
+Select Student
+Select Seat
+Start Date
+End Date
+Fees
+Payment Status
+
+Automatically:
+
+Update seat status
+Generate bill
+Send email
+Send SMS
+Payments
+
+Track:
+
+Amount
+Paid
+Pending
+Payment Method
+Payment Date
+Reports
+
+Generate:
+
+Active Students
+Expired Students
+Monthly Income
+Empty Seats
+
+Export:
+
+PDF
+Excel
+Notifications
+
+Automatically send:
+
+Welcome Email
+Booking Confirmation
+Expiry Reminder
+Renewal Reminder
+
+
+
+Milestone 2 – Software Requirement Specification (SRS)
+1. Introduction
+
+2. Objective
+
+3. Scope
+
+4. Functional Requirements
+
+5. Non-functional Requirements
+
+6. System Architecture
+
+7. Database Design
+
+8. APIs
+
+9. UI Design
+
+Milestone 3 – Folder Structure
+study-library-system/
+
+│
+├── frontend/
+│
+├── backend/
+│
+├── database/
+│
+├── docs/
+│
+├── screenshots/
+│
+├── docker/
+│
+└── README.md
+
+
+Milestone 4 – Database Design
+users
+
+students
+
+seats
+
+bookings
+
+payments
+
+invoices
+
+notifications
+
+settings
+
+
+Milestone 5 – ER Diagram
+Student
+   │
+   │
+Booking
+   │
+   │
+Seat
+
+Booking
+   │
+Payment
+
+Booking
+   │
+Invoice
+
+Milestone 6 – API Design
+POST /login
+
+POST /students
+
+GET /students
+
+GET /students/{id}
+
+PUT /students/{id}
+
+DELETE /students/{id}
+
+GET /seats
+
+POST /book-seat
+
+PUT /renew-seat
+
+GET /dashboard
+
+
+Milestone 7 – UI Design
+Login
+
+Dashboard
+
+Students
+
+Student Details
+
+Add Student
+
+Seats
+
+Booking
+
+Payments
+
+Reports
+
+Settings
+
+Milestone 8 – Backend Development
+FastAPI Project
+
+↓
+
+Database Connection
+
+↓
+
+Authentication
+
+↓
+
+Student APIs
+
+↓
+
+Seat APIs
+
+↓
+
+Booking APIs
+
+↓
+
+Payment APIs
+
+↓
+
+Reports
+
+Milestone 9 – Frontend Development
+Login
+
+↓
+
+Dashboard
+
+↓
+
+Students
+
+↓
+
+Seats
+
+↓
+
+Booking
+
+↓
+
+Reports
+
+Milestone 10 – Integrations
+
+Add:
+
+PDF Bill
+Email
+SMS
+
+Milestone 11 – Testing
+
+Test:
+
+Backend APIs
+Frontend
+Email
+SMS
+Database
+
+                  React
+
+                    │
+
+                Axios API
+
+                    │
+
+              FastAPI Backend
+
+                    │
+
+       -----------------------------
+
+       │             │             │
+
+ PostgreSQL      Email         SMS
+
+                    │
+
+               PDF Generator
