@@ -332,3 +332,18 @@ Database
                     │
 
                PDF Generator
+
+
+1. Model (Database)
+        ↓
+2. Migration
+        ↓
+3. Schema (Validation)
+        ↓
+4. Service (Business Logic)
+        ↓
+5. API Endpoint
+        ↓
+6. Testing
+        ↓
+7. Frontend
