@@ -1,5 +1,5 @@
 from sqlalchemy import Boolean, Enum, Integer
-from sqlalchemy.orm import Mapped,mapped_column
+from sqlalchemy.orm import Mapped,mapped_column,relationship
 
 from app.core.constants import SeatStatus
 from app.database.base_class import BaseModel
@@ -19,4 +19,8 @@ class Seat(BaseModel):
     is_active:Mapped[bool] = mapped_column(
         Boolean,
         default=True
+    )
+    bookings = relationship(
+        "Booking",
+        back_populates="seat"
     )

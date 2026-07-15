@@ -1,5 +1,5 @@
 from sqlalchemy import Boolean,String,Text
-from sqlalchemy.orm import Mapped,mapped_column
+from sqlalchemy.orm import Mapped,mapped_column,relationship
 
 from app.database.base_class import BaseModel
 
@@ -17,15 +17,11 @@ class Student(BaseModel):
         unique=True,
         nullable=False
     )
-    address:Mapped[str | None] = mapped_column(
-        Text,
-        nullable=True
-    )
-    contact:Mapped[str | None] = mapped_column(
-        String(15),
-        nullable=True
-    )
     is_active: Mapped[bool] = mapped_column(
         Boolean,
         default=True
+    )
+    bookings = relationship(
+        "Booking",
+        back_populates="student"
     )
